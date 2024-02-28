@@ -1,7 +1,6 @@
 package http_client
 
 import (
-	"github.com/go-resty/resty/v2"
 	"time"
 )
 
@@ -13,6 +12,6 @@ func GetHttpClient(proxys ...string) *resty.Client {
 		proxy := proxys[0]
 		client.SetProxy(proxy)
 	}
-	client.SetTimeout(time.Second * 5)
+	client.SetTimeout(time.Second * 50)
 	return client
 }
